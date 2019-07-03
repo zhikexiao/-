@@ -1,26 +1,24 @@
-#define  a1 morse.dot()
-#define  a2 morse.dash() 
-#define  a3 break 
 #include <Morse.h>
- Morse morse(13);
+Morse morse(13);
  
 void setup()
 {
-  Serial.begin(9600);
+    Serial.begin(9600);
 }
 char a;
 void loop()
 {
-  if(Serial.available())
-    a=Serial.read();
+    if(Serial.available())
+        a=Serial.read();
     switch(a){
         case '\n':
-        case ' ':
-            delay(1000);
+        case ' ':    //空格回车间隔1.5秒
+            delay(1500);
             break;      
         case 'a':
             morse.dot();
             morse.dash();
+            delay(1000);
             break;
 
         case 'b':
@@ -28,99 +26,157 @@ void loop()
             morse.dot();
             morse.dot();
             morse.dot();
+            delay(1000);
             break;
         case 'c':
             morse.dash();
             morse.dot();
             morse.dash();
             morse.dot();
+            delay(1000);
             break;
         case 'd':
             morse.dash();
             morse.dot();
             morse.dot();
+            delay(1000);
             break;
         case 'e':
             morse.dot();
+            delay(1000);
             break;
         case 'f':
             morse.dot();
             morse.dot();
             morse.dash();
             morse.dot();
+            delay(1000);
             break;
         case 'g':
             morse.dash();
             morse.dash();
             morse.dot();
+            delay(1000);
             break;
         case 'h':
             morse.dot();
             morse.dot();
             morse.dot();
             morse.dot();
+            delay(1000);
             break;
         case 'i':
             morse.dot();
             morse.dash();
             morse.dash();
             morse.dash();
+            delay(1000);
             break;
         case 'j':
             morse.dot();
             morse.dash();
             morse.dash();
             morse.dash();
+            delay(1000);
             break;
         case 'k':
             morse.dash();
             morse.dot();
             morse.dash();
+            delay(1000);
             break;
         case 'l':
             morse.dot();
             morse.dash();
             morse.dot();
             morse.dot();
+            delay(1000);
             break;
         case 'm':
             morse.dash();
             morse.dash();
+            delay(1000);
             break;
         case 'n':
             morse.dash();
             morse.dot();
+            delay(1000);
             break;
         case 'o':
             morse.dash();
             morse.dash();
             morse.dash();
+            delay(1000);
             break;
         case 'p':
             morse.dot();
             morse.dash();
             morse.dash();
             morse.dot();
-            a3;
+            delay(1000); 
+            break;
         case 'q':
-            a2;a2;a1;a2;a3;   
+            morse.dash();
+            morse.dash();
+            morse.dot();
+            morse.dash();
+            delay(1000);
+            break;   
         case 'r':
-            a1;a2;a1;a3;
+            morse.dot();
+            morse.dash();
+            morse.dot();
+            delay(1000); 
+            break;
         case 's':
-            a1;a1;a1;a3;
+            morse.dot();
+            morse.dot();
+            morse.dot();
+            delay(1000);
+            break;
         case 't':
-            a2;a3;
+            morse.dash();
+            delay(1000); 
+            break;
         case 'u':
-            a1;a1;a2;a3;
+            morse.dot();
+            morse.dot();
+            morse.dash();
+            delay(1000); 
+            break;
         case 'v':
-            a1;a1;a1;a2;a3;
+            morse.dot();
+            morse.dot();
+            morse.dot();
+            morse.dash();
+            delay(1000); 
+            break;
         case 'w':
-            a1;a2;a2;a3;
+            morse.dot();
+            morse.dash();
+            morse.dash();
+            delay(1000); 
+            break;
         case 'x':
-            a2;a1;a1;a2;a3;
+            morse.dash();
+            morse.dot();
+            morse.dot();
+            morse.dash();
+            delay(1000); 
+            break;
         case 'y':
-            a2;a1;a2;a2;a3;
+            morse.dash();
+            morse.dot();
+            morse.dash();
+            morse.dash();
+            delay(1000);
+            break;
         case 'z':
-            a2;a2;a1;a1;a3;
+            morse.dash();
+            morse.dash();
+            morse.dot();
+            morse.dot();
+            delay(1000); 
+            break;
     }
 }
